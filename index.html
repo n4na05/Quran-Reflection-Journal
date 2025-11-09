@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>My Quran Reflection Journal</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body onload="appStart()">
+
+  <!-- Sidebar navigation -->
+  <div class="sidebar">
+    <h2>My Quran Journal</h2>
+    <p style="font-size:13px; color:#bcc6ce">“A reflection a day keeps the heart connected.”</p>
+    <button onclick="goto('index.html')">📖 Surah List</button>
+    <button onclick="goto('notes.html')">🧠 My Notes</button>
+    <button onclick="goto('favorites.html')">⭐ Favorites</button>
+  </div>
+
+  <!-- Main content area -->
+  <div class="main-content">
+    <h1>Surah List</h1>
+    <p>Browse through all surahs, view details, and reflect on what you learn from each one.</p>
+
+    <div class="search-row">
+      <input id="searchInput" placeholder="Search surah by English name..." 
+             onkeydown="if(event.key==='Enter') searchSurah()" />
+      <button onclick="searchSurah()">Search</button>
+      <button onclick="getAllSurah()">Reset</button>
+    </div>
+
+    <!-- List of Surahs will appear here -->
+    <div id="surahList"></div>
+  </div>
+
+  <!-- ✅ Daily Reflection Popup -->
+<div id="reflectionPopup" class="popup-box" style="display:none;">
+  <div class="popup-content">
+    <h3>🌙 Daily Reflection</h3>
+    <p id="reflectionQuestion"></p>
+    <textarea id="reflectionAnswer" placeholder="Write your reflection here..."></textarea><br>
+    <button onclick="saveReflection()">💾 Save</button>
+    <button onclick="closeReflection()">❌ Close</button>
+  </div>
+</div>
+
+
+  <script src="renderer.js"></script>
+</body>
+</html>

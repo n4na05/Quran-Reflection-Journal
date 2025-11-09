@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>My Notes - Quran Journal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="displayNotes(); loadPrefill();">
+
+  <!-- Sidebar navigation -->
+  <div class="sidebar">
+    <h2>My Quran Journal</h2>
+    <p style="font-size:13px; color:s#bcc6ce">“A reflection a day keeps the heart connected.”</p>
+    <button onclick="goto('index.html')">📖 Surah List</button>
+    <button onclick="goto('notes.html')">🧠 My Notes</button>
+    <button onclick="goto('favorites.html')">⭐ Favorites</button>
+  </div>
+
+  <!-- Main section -->
+  <div class="main-content">
+    <h1>My Reflection Notes</h1>
+    <p>Record your reflection after reading each surah. You can also edit or delete them later.</p>
+
+    <!-- Form area -->
+    <div style="margin-bottom:12px;">
+      <input id="surahName" class="input-small" placeholder="Surah Name" />
+      <input id="ayahDone" class="input-small" type="number" min="0" placeholder="Ayahs Completed" />
+    </div>
+
+    <div>
+      <textarea id="note" placeholder="Write your reflection..."></textarea>
+    </div>
+
+    <div style="margin-top:8px;">
+      <button onclick="addNote()">➕ Add Note</button>
+      <button onclick="clearNoteForm()">Clear</button>
+    </div>
+
+    <hr>
+    <h2>Saved Reflections</h2>
+    <div id="noteList"></div>
+
+    <!-- ✅ EDIT BOX (Popup form for update) -->
+    <div id="editBox" style="display:none; background:#ffffff; padding:20px; border-radius:10px; box-shadow:0 0 8px rgba(0,0,0,0.1); width:80%; margin:20px auto;">
+      <h3>Edit Reflection</h3>
+      <input type="hidden" id="editIndex">
+
+      <label>Surah Name:</label><br>
+      <input type="text" id="editSurah" class="input-small"><br><br>
+
+      <label>Ayahs Completed:</label><br>
+      <input type="number" id="editAyah" class="input-small"><br><br>
+
+      <label>Reflection:</label><br>
+      <textarea id="editNoteText" placeholder="Update your reflection here..."></textarea><br><br>
+
+      <button onclick="saveEditedNote()">💾 Save Changes</button>
+      <button onclick="cancelEdit()">❌ Cancel</button>
+    </div>
+
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Favorites - Quran Journal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="showFavorites()">
+
+  <div class="sidebar">
+    <h2>My Quran Journal</h2>
+    <p style="font-size:13px; color:#bcc6ce">“A reflection a day keeps the heart connected.”</p>
+    <button onclick="goto('index.html')">📖 Surah List</button>
+    <button onclick="goto('notes.html')">🧠 My Notes</button>
+    <button onclick="goto('favorites.html')">⭐ Favorites</button>
+  </div>
+
+  <div class="main-content">
+    <h1>Favorite Surahs</h1>
+    <div id="favoriteList"></div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

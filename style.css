@@ -1,0 +1,120 @@
+/* style.css */
+body {
+ 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  color: #123;
+
+  /* Background settings */
+  background-image: url('images/background2.jpg'); /* pastikan path betul */
+  background-size: cover;        /* supaya gambar cover seluruh screen */
+  background-repeat: no-repeat;  /* jangan ulang gambar */
+  background-position: center;   /* center gambar */
+  background-attachment: fixed;  /* gambar stay walau scroll */
+  background-color: #f4f8f6;     /* fallback color */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #442265;
+  color: #fff;
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.sidebar h2 { margin-top: 0; font-size: 20px; }
+.sidebar button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  background: #8442c3;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.sidebar button:hover { background: #3b0285; }
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 24px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+h1 { color: #020404; margin-bottom: 6px; }
+.search-row { margin-bottom: 12px; }
+#searchInput { padding: 10px; width: 300px; border-radius: 6px; border: 1px solid #ccc; }
+
+/* Surah item card */
+.surah-item {
+  background: #ddadf8;
+  border-radius: 10px;
+  padding: 14px;
+  margin: 12px auto;
+  width: 86%;
+  box-shadow: 0 3px 8px rgba(170, 9, 9, 0.08);
+  text-align: left;
+}
+.surah-item h3 { margin: 0 0 6px 0; }
+.surah-meta { color: #353333; font-size: 14px; margin-bottom: 10px; }
+.surah-actions { margin-top: 8px; }
+.surah-actions button {
+  margin-right: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.btn-fav { background: #ffb1cc; }
+.btn-notes { background: #9267a0; }
+.btn-open { background: #cf44dc; }
+
+/* Notes page elements */
+textarea { width: 80%; height: 100px; padding: 8px; border-radius: 6px; border: 1px solid #c23d3d; }
+.input-small { padding: 8px; border-radius:6px; border:1px solid #ccc; width: 200px; }
+.note-item { margin: 12px auto; width: 86%; }
+
+/* small buttons */
+.small-btn { padding: 6px 8px; border-radius:10px; border:none; cursor:pointer; }
+.edit-btn { background:#836fe9; }
+.delete-btn { background:#6c7ee3; }
+
+/* ---------- Popup Reflection ---------- */
+.popup-box {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+}
+.popup-content textarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+.popup-content button {
+  margin: 8px 4px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.popup-content button:first-of-type { background-color: #7ad7c6; }
+.popup-content button:last-of-type { background-color: #ffb1cc; }
+
